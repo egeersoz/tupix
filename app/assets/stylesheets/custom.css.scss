@@ -1,7 +1,36 @@
 /* Universal */
 
+.jumbotron {
+	background-image: url('/images/rocket.jpg');
+}
+
+.jumbotron h1, .lead {
+	text-shadow: 1px 1px #DDDDDD;
+}
+
+.jumbotron p {
+	font-weight: 400;
+	padding-bottom: 30px;
+}
+
 .centertext {
 	text-align: center;
+}
+
+.front-logo {
+	-webkit-transition: -webkit-transform 0.4s;
+	-mozilla-transition: -mozilla-transform 0.4s;
+	-ms-transition: -ms-transform 0.4s;
+	-o-transition: -o-transform 0.4s;
+	transition: transform 0.4s;
+}
+
+.front-logo:hover {
+	-webkit-transform: scale(3,3);
+	-moz-transform: scale(3,3);
+	-ms-transform: scale(3,3);
+	-o-transform: scale(3,3);
+	transform: scale(3,3);
 }
 
 /* Footer */

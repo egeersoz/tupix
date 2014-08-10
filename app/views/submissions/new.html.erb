@@ -1,5 +1,5 @@
 <%= form_for @submission do |f| %>
-	<div class="row">
+	<div class="row centertext">
 	  <%= f.fields_for :images do |image| %>
 		  <div class="col-md-6">
 		    <%= image.label "Image" %>
@@ -7,8 +7,10 @@
 		  </div>
 	  <% end %>
 	</div>
-
-	<%= f.submit "Upload Images" %>
-
+	<div class="row centertext">
+		<div class="col-md-12">
+			<%= f.submit "Upload Images" %>
+		</div>
+	</div>
 	<% end %>
 
