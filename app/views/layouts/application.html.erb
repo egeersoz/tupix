@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%#= favicon_link_tag %>
+    <%= render 'layouts/shim' %>
+  </head>
+
+  <body>
+
+  	<%= render 'layouts/header' %>
+  	
+  	<div class="row">
+	    <div class="col-md-6 col-md-offset-3">
+	      <% flash.each do |key, value| %>
+	        <div class="alert-box">
+	          <div class="centertext flash-alert <%= flash_class(key) %>"> 
+	            <%= value %>
+	          </div>
+	        </div>
+	      <% end %>
+	    </div>
+    </div>
+
+    <div class="container">
+  	<%= yield %>
+  	</div>
+
+  	<%= render 'layouts/footer' %>
+
+  	<%= debug(params) if Rails.env.development? %>
+
+  </body>
+  
+</html>
