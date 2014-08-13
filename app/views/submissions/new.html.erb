@@ -1,9 +1,9 @@
 <%= form_for @submission do |f| %>
 	<div class="row centertext">
-	  <%= f.fields_for :images do |image| %>
+	  <%= f.fields_for :images, @submission.images do |image| %>
 		  <div class="col-md-6">
-		    <%= image.label "Image" %>
-		    <%= image.file_field :file %>
+		    <%= image.label "Select Image", for: "image#{image.index + 1}", class: "btn btn-primary" %>
+		    <%= image.file_field :file, class: "hidden-field", id: "image#{image.index + 1}" %>
 		  </div>
 	  <% end %>
 	</div>
