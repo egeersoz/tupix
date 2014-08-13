@@ -10,6 +10,25 @@ Tupix::Application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['AWS_BUCKET'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
+
+  config.action_mailer.default_url_options = {
+    :host => "http://localhost:3000"
+  }
+  config.action_mailer.smtp_settings = {
+    :address => ENV['MANDRILL_ADDRESS'],
+    :port => ENV['MANDRILL_PORT'],
+    :user_name => ENV['MANDRILL_USERNAME'],
+    :password => ENV['MANDRILL_PASSWORD']
+  }
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
