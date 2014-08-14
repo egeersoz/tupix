@@ -11,5 +11,22 @@ input.hidden-field {
 }
 
 label.hidden-field-label {
-	
+
+}
+
+.modal-dialog {
+	height: 400px;
+	width: 400px;
+}
+
+.btn-image-select {
+	width: 154px;
+	height: 100px;
+	margin: 10px 0 10px 0;
+}
+
+canvas {
+	border-radius: 3px;
+	border: 2px dashed #DDDDDD;
+	margin: 5px;
 }

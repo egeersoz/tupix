@@ -1,8 +1,8 @@
 <%= form_for @new_submission do |f| %>
-	<div class="row centertext">
+	<div class="row">
 		<div class="col-md-6">
-		  <%= f.label "Submission Name", :name %><br />
-		  <%= f.text_field :name, placeholder: "Enter a name for the submission" %>
+		  <%= f.label :name, "Submission name" %><br />
+		  <%= f.text_field :name %>
 	    </div>
 	</div>
 	<div class="row centertext">
@@ -10,8 +10,10 @@
 		  <div class="col-md-6">
 		  	<div class="row">
 			    <%= image.label "Select Image", for: "image#{image.index + 1}", id: "imageLoader#{image.index + 1}", class: "btn btn-primary btn-image-select" %>
-			    <%= image.file_field :file, id: "image#{image.index + 1}" %>
-			    <img src="#" id="preview<%= image.index + 1 %>">
+			    <%= image.file_field :file, class: "hidden-field", id: "image#{image.index + 1}" %>
+			    <canvas id="imageCanvas<%= image.index + 1 %>" height="100" width="154">
+			    	<div class="preview-text">Preview</div>
+			    </canvas>
 		    </div>
 		    <div class="row">
 			    <%= image.text_field :label, placeholder: "Image title" %>
@@ -21,7 +23,7 @@
 	</div>
 	<div class="row centertext">
 		<div class="col-md-12">
-			<%= f.submit "Upload Images", class: "hidden-field" %>
+			<%= f.submit "Upload Images", class: "hidden-field", id: "tupix-submit" %>
 		</div>
 	</div>
 <% end %>

@@ -1,9 +1,11 @@
 <div class="row">
+<h3><%= @submission.name %></h3>
 <% @images.each do |image| %>
 	<div class="col-md-6 image-col">
 		<a href="<%= image.file.url %>" data-lightbox="image-1">
 			<%= image_tag image.file.url(:medium), class: "submission-image" %>
 		</a>
+		<p><%= image.label %></p>
 	</div>
 <% end %>
 </div>
