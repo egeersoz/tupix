@@ -30,8 +30,8 @@ module ApplicationHelper
     end
   end
 
-  def is_active?(controller, section)
-    if current_page?(controller: controller, section: section)
+  def is_active?(action)
+    if current_page?(action: action)
       "active"
     else
       ""
