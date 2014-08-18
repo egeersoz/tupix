@@ -1,4 +1,4 @@
-<%= form_for @new_submission do |f| %>
+<%= form_for @new_submission, html: { multipart: true } do |f| %>
 	<div class="row">
 		<div class="col-md-12 submission-name">
 		  <%= f.label :name, "Submission name" %><br />
@@ -6,17 +6,17 @@
 	    </div>
 	</div>
 	<div class="row centertext">
-	  <%= f.fields_for :images, @new_submission.images do |image| %>
+	  <%= f.fields_for :pictures, @new_submission.pictures do |picture| %>
 		  <div class="col-md-6">
 		  	<div class="row">
-			    <%= image.label "Select Image", for: "image#{image.index + 1}", id: "imageLoader#{image.index + 1}", class: "btn btn-primary btn-image-select" %>
-			    <%= image.file_field :file, class: "hidden-field", id: "image#{image.index + 1}" %>
-			    <canvas id="imageCanvas<%= image.index + 1 %>" height="100" width="154">
+			    <%= picture.label "Add Image", for: "image#{picture.index + 1}", id: "imageLoader#{picture.index + 1}", class: "btn btn-primary btn-image-select" %>
+			    <%= picture.file_field :file, class: "hidden-field", id: "image#{picture.index + 1}", required: true %>
+			    <canvas class="preview-canvas" id="imageCanvas<%= picture.index + 1 %>" height="100" width="154">
 			    	<div class="preview-text">Preview</div>
 			    </canvas>
 		    </div>
 		    <div class="row">
-			    <%= image.text_field :label, placeholder: "Image title" %>
+			    <%= picture.text_field :label, placeholder: "Image title" %>
 		    </div>
 		  </div>
 	  <% end %>

@@ -1,11 +1,23 @@
-<div class="row">
-<h3><%= @submission.name %></h3>
-<% @images.each do |image| %>
-	<div class="col-md-6 image-col">
-		<a href="<%= image.file.url %>" data-lightbox="image-1">
-			<%= image_tag image.file.url(:medium), class: "submission-image" %>
-		</a>
-		<p><%= image.label %></p>
+<%= render 'layouts/modes' %>
+
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h3 class="panel-title submission-name-show"><%= @submission.name %></h3>
 	</div>
-<% end %>
+	<div class="panel-body">
+		<div class="row">
+		<% @pictures.each do |picture| %>
+			<div class="col-md-6 image-col">
+				<a href="<%= picture.file.url %>" data-lightbox="submission", data-title="<%= picture.label %>">
+					<%= image_tag picture.file.url(:medium), class: "submission-image" %>
+				</a>
+				<div class="row image-label-show centertext">
+					<div class="col-md-12">
+						<%= picture.label %>
+					</div>
+				</div>
+			</div>
+		<% end %>
+		</div>
+	</div>
 </div>

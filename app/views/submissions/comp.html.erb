@@ -1,0 +1,16 @@
+<%= render 'layouts/modes' %>
+
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h3 class="panel-title submission-name-show"><%= @submission.name %></h3>
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-12 image-col">
+				<a href="<%= @composite.file.url %>" data-lightbox="image-1", data-title="Composite Mode">
+					<%= image_tag @composite.file.url(:medium), class: "submission-image" %>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

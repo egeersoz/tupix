@@ -25,6 +25,6 @@ class User < ActiveRecord::Base
          :confirmable
 
   has_many :user_submissions
-  has_many :submissions, through: :submission_images
+  has_many :submissions, through: :user_submissions
   
 end

@@ -142,6 +142,9 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    redis (3.1.0)
+    redis-namespace (1.5.1)
+      redis (~> 3.0, >= 3.0.4)
     rmagick (2.13.2)
     rspec-core (2.13.1)
     rspec-expectations (2.13.0)
@@ -229,6 +232,8 @@ DEPENDENCIES
   pg
   rails (= 4.0.3)
   rails_12factor (= 0.0.2)
+  redis
+  redis-namespace
   rmagick (= 2.13.2)
   rspec-rails (= 2.13.1)
   sass-rails (>= 3.2)

@@ -6,12 +6,26 @@
 	border-radius: 5px;
 }
 
+.submission-name-show {
+	margin-left: 15px;
+	margin-right: 15px;
+	border-bottom: 1px dotted #DDDDDD;
+}
+
 input.hidden-field {
 	display: none;
 }
 
 label.hidden-field-label {
 
+}
+
+.image-label-show {
+	border-radius: 3px;
+	background-color: #F5F5F5;
+	font-size: 16px;
+	margin: 10px 15px 0 15px;
+	padding: 5px 0 5px 0;
 }
 
 .modal-dialog {
@@ -25,9 +39,24 @@ label.hidden-field-label {
 }
 
 canvas {
+	position: relative;
 	border-radius: 3px;
 	border: 2px dashed #DDDDDD;
 	margin: 5px 0 5px 0;
+}
+
+.preview-canvas {
+	background: url('/images/magnify_glass.png') no-repeat center;
+}
+
+.preview-text {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
 }
 
 .submission-name {

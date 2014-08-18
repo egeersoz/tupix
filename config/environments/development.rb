@@ -9,6 +9,8 @@ Tupix::Application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  Paperclip.options[:command_path] = "/usr/local/bin/convert"
+
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {

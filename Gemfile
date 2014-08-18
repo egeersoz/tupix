@@ -17,16 +17,18 @@ gem 'aws-sdk'
 # Secure management and deployment of environment variables
 gem 'figaro'
 
+# Managing randomizations for submissions
+gem 'redis'
+gem 'redis-namespace'
+
 # Allows using Sass to develop bootstrap stylings
 #gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
 # Use SCSS for stylesheets
 
-
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sass-rails', '>= 3.2'
-
 
 #gem 'sass-rails', '~> 4.0.0'
 

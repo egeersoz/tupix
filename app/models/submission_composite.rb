@@ -1,17 +1,17 @@
 # == Schema Information
 #
-# Table name: submission_images
+# Table name: submission_composites
 #
 #  id            :integer          not null, primary key
 #  submission_id :integer
-#  image_id      :integer
+#  composite_id  :integer
 #  created_at    :datetime
 #  updated_at    :datetime
 #
 
-class SubmissionImage < ActiveRecord::Base
+class SubmissionComposite < ActiveRecord::Base
 
   belongs_to :submission
-  belongs_to :image
-
+  belongs_to :composite
+	
 end

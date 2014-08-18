@@ -3,9 +3,10 @@
 # Table name: submissions
 #
 #  id         :integer          not null, primary key
+#  name       :text             default("")
+#  slug       :text             default("")
 #  created_at :datetime
 #  updated_at :datetime
-#  name       :text
 #
 
 require 'spec_helper'
