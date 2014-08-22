@@ -38,4 +38,12 @@ module ApplicationHelper
     end
   end
 
+  #Used to create the submission and its two picture associations for the modal
+  #form in the header.
+  #
+  def create_form_objects
+    @new_submission = Submission.new
+    2.times { @new_submission.pictures.build }
+  end
+
 end

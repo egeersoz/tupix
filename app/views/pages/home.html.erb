@@ -1,0 +1,14 @@
+<div class="jumbotron centertext">
+	<h1><i class="glyphicon glyphicon-picture front-logo"></i><i class="glyphicon glyphicon-picture front-logo" style="font-size: 28px"></i>  Tupix</h1>
+	<p class="lead">Compare two images side by side.<br />
+				    In the same browser window!
+				    </p>
+	<%= link_to "#", data: { toggle: "modal", target: "#upload-form" }, class: "btn btn-lg btn-primary" do %>
+		<i class="glyphicon glyphicon-cloud-upload"></i> Upload
+	<% end %>
+	<% if user_signed_in? %>
+		<%= link_to submissions_path, class: "btn btn-lg btn-default" do %>
+			<i class="glyphicon glyphicon-picture"></i> <i class="glyphicon glyphicon-picture" style="font-size: 10px"></i> My Tupixes
+		<% end %>
+	<% end %>
+</div>

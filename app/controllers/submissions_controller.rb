@@ -1,5 +1,7 @@
 class SubmissionsController < ApplicationController
 
+  before_action :create_form_objects, except: [:create, :delete]
+
   def create
     @submission = Submission.new(submission_params)
     if @submission.save
@@ -9,6 +11,9 @@ class SubmissionsController < ApplicationController
                             params[:submission][:pictures_attributes]["1"][:file].tempfile.open)
       @composite.file = @comp_file
       if @composite.save
+        if user_signed_in?
+          @submission.create_user_submission(user_id: current_user.id)
+        end
         @submission.create_submission_composite(composite_id: @composite.id)
         redirect_to show_submission_path(@submission.slug)
       end
@@ -19,22 +24,17 @@ class SubmissionsController < ApplicationController
   end
 
   def index
-    @new_submission = Submission.new
-    2.times { @new_submission.pictures.build }
+    if user_signed_in?
+      @submissions = current_user.submissions
+    end
   end
 
   def show
-    @new_submission = Submission.new
-    2.times { @new_submission.pictures.build }
-    
     @submission = Submission.find_by_slug(params[:slug])
     @pictures = @submission.pictures.to_a
   end
 
   def comp
-    @new_submission = Submission.new
-    2.times { @new_submission.pictures.build }
-    
     @submission = Submission.find_by_slug(params[:slug])
     @composite = @submission.composite
   end
@@ -48,4 +48,5 @@ class SubmissionsController < ApplicationController
     def submission_params
       params.require(:submission).permit(:name, pictures_attributes: [:file, :label])
     end
+
 end

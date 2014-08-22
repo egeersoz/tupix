@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+
+  include ApplicationHelper
+
+  before_action :create_form_objects, except: [:create, :update, :delete]
   protect_from_forgery with: :exception
+
 end

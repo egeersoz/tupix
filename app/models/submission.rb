@@ -17,6 +17,9 @@ class Submission < ActiveRecord::Base
   has_many :pictures, through: :submission_pictures
   has_many :submission_pictures
 
+  has_one :user_submission
+  has_one :user, through: :user_submission
+
   accepts_nested_attributes_for :pictures
 
   before_create :generate_slug
