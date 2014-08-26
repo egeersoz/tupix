@@ -1,3 +1,15 @@
+<div class="list-group">
 <% @submissions.each do |submission| %>
-	<%= submission.id %>
+	<%= link_to show_submission_path(submission.slug), class: "list-group-item" do %>
+		<div class="row">
+			<div class="col-md-5">
+				<% if submission.name.blank? %>
+					Unnamed Tupix
+				<% else %>
+					<%= submission.name %>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
 <% end %>
+</div>

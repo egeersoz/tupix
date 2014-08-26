@@ -1,26 +1,17 @@
 class SubmissionsController < ApplicationController
 
-  before_action :create_form_objects, except: [:create, :delete]
+  before_action :create_form_objects
 
   def create
-    @submission = Submission.new(submission_params)
-    if @submission.save
-      @composite = Composite.new
-      @comp_file = @composite.
-                   generate(params[:submission][:pictures_attributes]["0"][:file].tempfile.open,
-                            params[:submission][:pictures_attributes]["1"][:file].tempfile.open)
-      @composite.file = @comp_file
-      if @composite.save
-        if user_signed_in?
-          @submission.create_user_submission(user_id: current_user.id)
-        end
-        @submission.create_submission_composite(composite_id: @composite.id)
-        redirect_to show_submission_path(@submission.slug)
-      end
-    else
-      flash[:error] = "Oops! Something didn't work..."
-      redirect_to :back
+    @submission = Submission.create(submission_params)
+    @composite = Composite.create(file: Composite.generate(
+                                        params[:submission][:pictures_attributes]["0"][:file].tempfile.open,
+                                        params[:submission][:pictures_attributes]["1"][:file].tempfile.open))
+    if user_signed_in?
+      @submission.create_user_submission(user_id: current_user.id)
     end
+    @submission.create_submission_composite(composite_id: @composite.id)
+    redirect_to show_submission_path(@submission.slug)
   end
 
   def index
@@ -41,6 +32,9 @@ class SubmissionsController < ApplicationController
 
 
   def delete
+    Submission.find_by_slug(params[:slug]).destroy
+    flash[:success] = "Tupix deleted!"
+    redirect_to root_path
   end
 
   private

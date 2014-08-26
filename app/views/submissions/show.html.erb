@@ -2,7 +2,20 @@
 
 <div class="panel panel-info">
 	<div class="panel-heading">
-		<h3 class="panel-title submission-name-show"><%= @submission.name %></h3>
+		<div class="row">
+			<div class="col-md-11">
+				<h3 class="panel-title submission-name-show">
+					<% if @submission.name.blank? %>
+						Unnamed Tupix
+					<% else %>
+						<%= @submission.name %>
+					<% end %>
+				</h3>
+			</div>
+			<div class="col-md-1">
+				<%= link_to "Delete", destroy_submission_path(@submission.slug), class: 'btn btn-danger', method: :delete %>
+			</div>
+		</div>
 	</div>
 	<div class="panel-body">
 		<div class="row">

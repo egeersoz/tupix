@@ -32,7 +32,7 @@ class Composite < ActiveRecord::Base
 
     validates_attachment_content_type :file, :content_type => /\Aimage\/.*\Z/
 
-    def generate(image1, image2)
+    def self.generate(image1, image2)
       image_list = Magick::ImageList.new(image1, image2)
       composite_image = image_list.append(false).write('composite.jpg')
       File.new(composite_image.filename)

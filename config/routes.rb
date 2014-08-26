@@ -10,7 +10,7 @@ Tupix::Application.routes.draw do
   get '/new', to: 'submissions#new', as: 'new_submission'
   get '/mine', to: 'submissions#index', as: 'submissions'
   post '/mine', to: 'submissions#create', as: 'create_submission'
-  delete '/:slug', to: 'submissions#destroy', as: 'destroy_submission'
+  delete '/:slug', to: 'submissions#delete', as: 'destroy_submission'
   devise_for :users
 
 end

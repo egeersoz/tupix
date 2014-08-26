@@ -50,9 +50,10 @@ $(document).ready(function() {
 	    reader1.onload = function(event){
 	        var img1 = new Image();
 	        img1.onload = function(){
-	            canvas1.width = 154;
+	        	var ratio1 = Math.floor(img1.naturalHeight / 100);
+	            canvas1.width = Math.floor(img1.naturalWidth / ratio1);
 	            canvas1.height = 100;
-	            ctx1.drawImage(img1,0,0, 154, 100);
+	            ctx1.drawImage(img1,0,0, canvas1.width, 100);
 	        }
 	        img1.src = event.target.result;
 	    }
@@ -64,9 +65,10 @@ $(document).ready(function() {
 	    reader2.onload = function(event){
 	        var img2 = new Image();
 	        img2.onload = function(){
-	            canvas2.width = 154;
+	        	var ratio2 = Math.floor(img2.naturalHeight / 100);
+	            canvas2.width = Math.floor(img2.naturalWidth / ratio2);
 	            canvas2.height = 100;
-	            ctx2.drawImage(img2,0,0, 154, 100);
+	            ctx2.drawImage(img2,0,0, canvas2.width, 100);
 	        }
 	        img2.src = event.target.result;
 	    }
@@ -74,6 +76,8 @@ $(document).ready(function() {
 	});
 
 	$('#modal-submit').on('click', function(){
+		$(this).html("<i class='fa fa-spinner fa-spin'></i> Working...");
+		$(this).attr('disabled', true);
 		$('#tupix-submit').click();
 	});
 });
