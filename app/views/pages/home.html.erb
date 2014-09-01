@@ -1,6 +1,6 @@
 <div class="jumbotron centertext">
-	<h1><i class="glyphicon glyphicon-picture front-logo"></i><i class="glyphicon glyphicon-picture front-logo" style="font-size: 28px"></i>  Tupix</h1>
-	<p class="lead">Compare two images side by side.<br />
+	<h1>Tupix</h1>
+	<p class="lead">View two images side by side.<br />
 				    In the same browser window!
 				    </p>
 	<%= link_to "#", data: { toggle: "modal", target: "#upload-form" }, class: "btn btn-lg btn-primary" do %>
@@ -11,4 +11,54 @@
 			<i class="glyphicon glyphicon-picture"></i> <i class="glyphicon glyphicon-picture" style="font-size: 10px"></i> My Tupixes
 		<% end %>
 	<% end %>
+</div>
+<section>
+<div class="row">
+	<div class="centertext col-md-8 col-md-offset-2">
+	<h2>Comparing two images online should be easy.</h2>
+	<p class="lead">No more one-at-a-time uploads, having to share two separate links, and switching back and forth between two browser tabs to view them.</p>
+	<p class="lead">Now, there is Tupix.</p>
+	</div>
+</div>
+</section>
+<hr class="half-rule">
+<div class="row">
+	<div class="centertext col-md-4">
+		<p style="font-size: 72px"><i class="glyphicon glyphicon-picture compare-contrast"></i><i class="glyphicon glyphicon-picture compare-contrast"></i></p>
+		<h4>Compare and contrast</h4>
+		<p>Simply upload the two images you want to compare. Then view them side by side!</p>
+	</div>
+	<div class="centertext col-md-4">
+			<div class="row centertext">
+				<div class="col-md-6 col-md-offset-1">
+					<span style="font-size: 72px"><i class="glyphicon glyphicon-picture stitch-together"></i><i class="glyphicon glyphicon-picture stitch-together"></i></span>
+				</div>
+				<div class="col-md-5">
+					<span style="font-size: 36px">
+						<div class="row vertical-stitch"><i class="glyphicon glyphicon-picture stitch-together"></i></div>
+						<div class="row vertical-stitch"><i class="glyphicon glyphicon-picture stitch-together"></i></div>
+					</span>
+				</div>
+			</div>
+		<h4>Stitch horizontally or vertically</h4>
+		<p>Combine the images into one. Ideal for embedding on forums, emails or websites!</p>
+	</div>
+	<div class="centertext col-md-4">
+		<div id="glyph-background">
+			<span class="fa-stack">
+			  <i class="fa fa-picture-o fa-stack-2x"></i>
+			  <i class="fa-annotation"> Hello!</i>
+			</span>
+		</div>
+		<h4>Add annotations</h4>
+		<p>Perfect for pointing out the differences or creating memes!</p>
+	</div>
+</div>
+<hr class="half-rule">
+<div class="row">
+	<div class="centertext col-md-4 col-md-offset-4">
+		<h3>Give it a try. <%= link_to "#", data: { toggle: "modal", target: "#upload-form" } do %>
+			It's free! <% end %>
+		</h3>
+	</div>
 </div>

@@ -1,5 +1,19 @@
 /* Universal */
 
+hr {
+	border: 1px solid #eee;
+	height: 0;
+
+	&.half-rule {
+		width: 100px;
+		margin: 40px auto;
+	}
+}
+
+section {
+	margin-top: 30px;
+}
+
 .jumbotron {
 	background-image: url('/images/rocket.jpg');
 }
@@ -17,22 +31,55 @@
 	text-align: center;
 }
 
-.front-logo {
+.compare-contrast {
 	-webkit-transition: -webkit-transform 0.4s;
 	-moz-transition: -mozilla-transform 0.4s;
 	-ms-transition: -ms-transform 0.4s;
 	-o-transition: -o-transform 0.4s;
 	transition: transform 0.4s;
-	padding: 0 6px 0 6px;
+	padding: 0 12px 0 12px;
+
+	&:hover {
+		-webkit-transform: scale(3,3);
+		-moz-transform: scale(3,3);
+		-ms-transform: scale(3,3);
+		-o-transform: scale(3,3);
+		transform: scale(3,3);
+	}
 }
 
-.front-logo:hover {
-	-webkit-transform: scale(3,3);
-	-moz-transform: scale(3,3);
-	-ms-transform: scale(3,3);
-	-o-transform: scale(3,3);
-	transform: scale(3,3);
+.stitch-together {
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -mozilla-transform 0.4s;
+	-ms-transition: -ms-transform 0.4s;
+	-o-transition: -o-transform 0.4s;
+	transition: transform 0.4s;
 }
+
+.vertical-stitch {
+	height: 33px !important;
+	padding-top: 6px;
+}
+
+#glyph-background {
+	height: 102px;
+	font-size: 48px;
+}
+
+.fa-picture-o {
+	z-index: -3;
+	padding-top: -5px;
+}
+
+.fa-annotation {
+	font-size: 18px;
+	color: red;
+	z-index: -2;
+	padding-left: 32px;
+	font-weight: 500;
+}
+
+
 
 /* Footer */
 
