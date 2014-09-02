@@ -1,15 +1,27 @@
 <div class="list-group">
 <% @submissions.each do |submission| %>
-	<%= link_to show_submission_path(submission.slug), class: "list-group-item" do %>
+	<div class="list-group-item submission-index-item">
 		<div class="row">
-			<div class="col-md-5">
+			<div class="col-md-4 valign">
 				<% if submission.name.blank? %>
-					Unnamed Tupix
+					<%= link_to "Unnamed Tupix", show_submission_path(submission.slug) %>
 				<% else %>
-					<%= submission.name %>
+					<%= link_to submission.name, show_submission_path(submission.slug) %>
+				<% end %>
+			</div>
+			<div class="col-md-4 valign">
+				<%= image_tag submission.pictures.to_a.at(0).file.url(:thumb) -%>
+				<%= image_tag submission.pictures.to_a.at(1).file.url(:thumb) %>
+			</div>
+			<div class="col-md-2 valign">
+				<p><%= submission.created_at.strftime("%m.%d.%y") %></p>
+			</div>
+			<div class="col-md-2 centertext valign">
+				<%= link_to destroy_submission_path(submission.slug), method: :delete, data: { confirm: "Are you sure?" } do %>
+					<i class="glyphicon glyphicon-trash"></i>
 				<% end %>
 			</div>
 		</div>
-	<% end %>
+	</div>
 <% end %>
 </div>

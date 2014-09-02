@@ -1,6 +1,7 @@
 class SubmissionsController < ApplicationController
 
   before_action :create_form_objects
+  before_action :correct_user, only: [:destroy]
 
   def create
     @submission = Submission.create(submission_params)
