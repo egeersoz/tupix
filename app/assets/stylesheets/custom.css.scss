@@ -27,7 +27,15 @@ hr {
 	color: $logo-orange;
 	text-shadow: 1px 1px black;
 }
-.logo-dark {
+
+h1 > .logo-orange {
+	padding-left: 40px;
+}
+h1 > .logo-black {
+	padding-left: 55px;
+}
+
+.logo-black {
 	padding-bottom: 2px;
 	color: black;
 	text-shadow: 1px 1px $logo-orange;
