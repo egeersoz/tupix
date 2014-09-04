@@ -22,13 +22,17 @@
 		<% @pictures.each do |picture| %>
 			<div class="col-md-6 image-col">
 				<a href="<%= picture.file.url %>" data-lightbox="submission", data-title="<%= picture.label %>">
-					<%= image_tag picture.file.url(:medium), class: "submission-image" %>
+					<%= image_tag picture.file.url(:medium), data: { lightbox: "submission", title: picture.label }, class: "submission-image" %>
 				</a>
+				<% if picture.label.length > 0 %>
 				<div class="row image-label-show centertext">
 					<div class="col-md-12">
+					
 						<%= picture.label %>
+					
 					</div>
 				</div>
+				<% end %>
 			</div>
 		<% end %>
 		</div>
