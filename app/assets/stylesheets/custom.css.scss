@@ -1,4 +1,10 @@
+$logo-orange: #FF6600;
+
 /* Universal */
+
+header > .navbar {
+	background-color: #ECECF8;
+}
 
 hr {
 	border: 1px solid #eee;
@@ -8,10 +14,54 @@ hr {
 		width: 100px;
 		margin: 40px auto;
 	}
+
+	&.quarter-rule {
+		width: auto;
+		margin: 20px auto;
+		border: 1px dotted #ccc;
+	}
+}
+
+.logo-orange {
+	padding-bottom: 2px;
+	color: $logo-orange;
+	text-shadow: 1px 1px black;
+}
+.logo-dark {
+	padding-bottom: 2px;
+	color: black;
+	text-shadow: 1px 1px $logo-orange;
+}
+
+.version {
+	line-height: 15px;
+	font-size: 12px;
 }
 
 section {
 	margin-top: 30px;
+}
+
+/* Forms */
+
+.form {
+	border: 1px dotted #ccc;
+	border-radius: 5px;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	background-color: #ECECF8;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+.form-control {
+	margin-bottom: 5px;
+}
+
+.input-group > div {
+	margin-bottom: 20px;
 }
 
 .valign {
@@ -104,12 +154,14 @@ section {
 /* Footer */
 
 footer {
+	height: 65px;
 	margin-top: 60px;
 	padding-top: 5px;
-	border-top: 1px solid gray;
+	border-top: 1px dotted gray;
 	color: #999;
 }
 
 footer p {
+	padding-top: 20px;
 	font-size: 12px;
 }

@@ -4,6 +4,7 @@ Tupix::Application.routes.draw do
 
   get '/privacy', to: 'pages#privacy', as: 'privacy'
   get '/terms', to: 'pages#terms', as: 'terms'
+  get '/about', to: 'pages#about', as: 'about'
 
   get '/v/:slug', to: 'submissions#show', as: 'show_submission'
   get '/c/:slug', to: 'submissions#comp', as: 'show_composite'
