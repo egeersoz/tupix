@@ -1,9 +1,10 @@
 $logo-orange: #FF6600;
+$tupix-purple: #ECECF8;
 
 /* Universal */
 
 header > .navbar {
-	background-color: #ECECF8;
+	background-color: $tupix-purple;
 }
 
 hr {
@@ -48,6 +49,14 @@ h1 > .logo-black {
 
 section {
 	margin-top: 30px;
+}
+
+blockquote {
+	border-left: 8px solid $tupix-purple; 
+}
+
+.blockquote-reverse {
+	border-right: 8px solid $tupix-purple;
 }
 
 /* Forms */
@@ -161,7 +170,7 @@ section {
 
 /* Footer */
 
-footer {
+.footer {
 	height: 65px;
 	margin-top: 60px;
 	padding-top: 5px;
@@ -169,7 +178,7 @@ footer {
 	color: #999;
 }
 
-footer p {
+.footer p {
 	padding-top: 20px;
 	font-size: 12px;
 }
